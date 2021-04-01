@@ -11,13 +11,13 @@ var drop;
 var drops = [];
 
 function preload(){
-  thunderImg1 = loadImage("images/thunder1.jpeg")
+  thunderImg1 = loadImage("images/thunder1.png")
   
-  thunderImg2 = loadImage("images/thunder2.jpeg")
+  thunderImg2 = loadImage("images/thunder2.png")
   
-  thunderImg3 = loadImage("images/thunder3.jpeg")
+  thunderImg3 = loadImage("images/thunder3.png")
   
-  thunderImg4 = loadImage("images/thunder4.jpeg")
+  thunderImg4 = loadImage("images/thunder4.png")
 }
 
 function setup(){
@@ -50,20 +50,23 @@ function draw(){
       drops[m].display();
    }
 
-   if(frameCount % 10 === 0) {
-      var thunder = createSprite(200,100,20,20);
+   if(frameCount % 20 === 0) {
+      var thunder = createSprite(200,40,20,20);
+      thunder.scale = 0.2;
       var rand = Math.round(random(1,4));
       switch(rand){
-         case 1: thunder.addImage("thunder",thunderImg1);
+         case 1: thunder.addImage("thunder1",thunderImg1);
          break;
-         case 2: thunder.addImage("thunder",thunderImg2);
+         case 2: thunder.addImage("thunder2",thunderImg2);
          break;
-         case 3: thunder.addImage("thunder",thunderImg3);
+         case 3: thunder.addImage("thunder3",thunderImg3);
          break;
-         case 4: thunder.addImage("thunder",thunderImg4);  
+         case 4: thunder.addImage("thunder4",thunderImg4); 
          break;
          default: break;
       }
    }
+
+   drawSprites();
 }   
 
