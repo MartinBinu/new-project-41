@@ -50,9 +50,10 @@ function draw(){
       drops[m].display();
    }
 
-   if(frameCount % 20 === 0) {
-      var thunder = createSprite(200,40,20,20);
-      thunder.scale = 0.2;
+   if(frameCount % 10 === 0) {
+      var thunder = createSprite(random(50,350),40,20,20);
+      thunder.scale = 0.5;
+      
       var rand = Math.round(random(1,4));
       switch(rand){
          case 1: thunder.addImage("thunder1",thunderImg1);
@@ -65,8 +66,8 @@ function draw(){
          break;
          default: break;
       }
+      thunder.lifetime = 10;
    }
 
    drawSprites();
 }   
-
